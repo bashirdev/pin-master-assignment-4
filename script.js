@@ -4,9 +4,7 @@ document.getElementById('randomGenerate').addEventListener('click', function() {
     let numberRandom = Math.floor(1000 + Math.random() * 9000);
     isMatchNumber = numberRandom;
     document.getElementById('random-input').value = isMatchNumber;
-
-    chackPin();
-
+chackPin();
 })
 
 //Pin display value
@@ -20,7 +18,6 @@ function pinNumber() {
             chackPin();
         })
     }
-
 }
 
 pinNumber();
@@ -28,16 +25,12 @@ pinNumber();
 // pin match checker
 function chackPin() {
     document.getElementById('submit').addEventListener('click', function() {
-
-        if (isMatchcal.value == isMatchNumber) {
+          if (isMatchcal.value == isMatchNumber) {
             const activeDisplay = document.getElementById('notify-active');
             activeDisplay.style.display = "block";
            const deactiveDisplay = document.getElementById('notify-deactive');
             deactiveDisplay.style.display = "none";
-           
-           
-
-        }
+       }
         if (isMatchcal.value != isMatchNumber) {
             const deactiveDisplay = document.getElementById('notify-deactive');
             deactiveDisplay.style.display = "block";
@@ -53,12 +46,10 @@ function chackPin() {
 document.getElementById('clear').addEventListener('click', function() {
     isMatchcal.value = null;
 })
-
 // clear one by   one
 document.getElementById('single-number-delete').addEventListener('click', function() {
     isMatchcal.value = isMatchcal.value.substring(0, isMatchcal.value.length - 1);
 })
-
 
 // disableed and left action function
 var count = 0;
@@ -76,14 +67,11 @@ function actionLeft() {
         document.getElementById('submit').innerText="blocked for 24 hours"
     } else if (click >= 3) {
         document.getElementById('action-leftId').innerHTML = 2;
-      
-    }
+     }
     if (click >= 6) {
         document.getElementById('action-leftId').innerHTML = 1;
-       
     }
     if (click >= 12) {
         document.getElementById('action-leftId').innerHTML = 0;
-       
-    }
+       }
 }
